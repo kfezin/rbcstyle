@@ -2,35 +2,37 @@
 
 Landing page estática em português brasileiro para apresentar o trabalho da Rebeca e facilitar a exploração dos serviços e fotos do portfólio. É uma versão de apresentação, ainda não publicada e bloqueada contra indexação.
 
-## Executar e compilar
+## Como abrir
 
-```bash
-npm ci
-npm run dev
+O site é **estático e não precisa de build**. Todos os caminhos são relativos (`./assets/...`), então funciona igual em:
+
+- **VS Code**: clique com o botão direito em `index.html` → *Open with Live Server*.
+- **GitHub Pages** (inclusive em subpasta, como `/rbcstyle/`), Netlify, Vercel ou qualquer hospedagem: basta enviar os arquivos da raiz.
+- Opcional: `npm install && npm run dev` (servidor Vite na porta 3000).
+
+> Abrir o `index.html` com duplo clique (`file://`) não carrega os scripts de módulo por bloqueio do navegador; use o Live Server.
+
+## Estrutura
+
 ```
-
-O projeto usa a porta 3000. `predev` gera `index.html` a partir do template e dos módulos de dados. Para compilar a versão estática:
-
-```bash
-npm run build
-npm run preview
+index.html              página final (é ela que vai para o servidor)
+favicon.svg  robots.txt  llms.txt  .nojekyll
+assets/
+  css/style.css         tokens, componentes, layout e responsividade
+  js/main.js            ponto de entrada
+  js/modules/           menu, galeria/dialog, FAQ, movimento
+  js/data/              site.js, services.js, gallery.js (conteúdo e imagens)
+  vendor/               gsap, ScrollTrigger e lenis (sem depender de node_modules)
+  images/               todas as fotos em WebP
+templates/index.html    modelo usado para gerar o index.html
+scripts/render-page.mjs gera cards, FAQ e JSON-LD a partir de assets/js/data
 ```
-
-O build de produção fica em `dist/` e usa base relativa para aceitar hospedagem estática em subpastas.
 
 ## Editar conteúdo
 
-- `src/data/site.js`: marca, localização, canais, metadados e imagens de Rebeca.
-- `src/data/services.js`: famílias de serviço e perguntas frequentes.
-- `src/data/gallery.js`: fotos, categorias, descrições e ALT.
-- `src/templates/index.html`: estrutura visual e texto institucional.
-- `scripts/render-page.mjs`: geração estática de cards, FAQ e JSON-LD; mantém conteúdo importante no HTML inicial para busca e compartilhamento.
-- `src/style.css`: tokens, componentes, layout, estados e responsividade.
-- `src/modules/`: menu, galeria/dialog, imagens, FAQ, movimento.
-- `public/images/`: fallback local das fotos em WebP.
-- `public/manus-routes.json`: manifesto da rota única.
+Edite os dados em `assets/js/data/` ou a estrutura em `templates/index.html` e rode `npm run render` para atualizar o `index.html`. Ajustes rápidos também podem ser feitos direto no `index.html`, mas serão sobrescritos no próximo `npm run render`.
 
-Após editar os dados, execute `node scripts/render-page.mjs` para atualizar o `index.html`; `npm run dev` e `npm run build` fazem isso automaticamente.
+Para adicionar uma imagem, coloque o arquivo em `assets/images/` e use o caminho `./assets/images/nome.webp` (sempre com `./`, nunca começando com `/`).
 
 ## Dados de apresentação a confirmar antes de publicar
 
