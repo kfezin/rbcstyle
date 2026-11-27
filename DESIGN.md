@@ -1,60 +1,118 @@
-# DESIGN — Rbc_tranças | Trancista
+# Rbc_tranças | Trancista — Design system
 
-## Conceito
+## Direção
 
-A página traduz o trabalho da Rebeca em uma apresentação **editorial afro-contemporânea**: fotografia autoral em primeiro plano, contraste café/marfim e o cobre como assinatura. A composição alterna blocos claros e escuros, letras expressivas e informação prática direta; as fotos e a própria frase da Rebeca carregam a personalidade, sem depender de efeitos exagerados.
+**Trama editorial:** uma capa de revista construída a partir do recorte PNG de tranças fornecido na pasta Menu Header, alinhado à borda direita, e da assinatura verbal que a Rebeca já usa. A fotografia abre a página; o catálogo e as informações de atendimento vêm depois, com leitura direta. O motivo proprietário é a linha de divisão do cabelo, reduzida a um filete que reaparece como divisor — sem selos, molduras ou ornamentos em excesso.
 
-**Essência:** tranças e penteados afro para quem quer explorar estilos e conversar diretamente com a trancista que os realiza. Personalidade: calorosa, marcante e cuidadosa.
+A página fala em primeira pessoa quando é a Rebeca quem fala. O texto comunica estilos, cidade e próximo passo; não cria avaliações, resultados, anos de experiência, tempos de execução ou regras.
 
-**Voz:** direta, humana e segura; fala de beleza, estilo e autoestima sem inventar resultados ou promessas. Exemplos: “Tranças com presença.” e “Onde Deus me plantar, minhas mãos florescerão.”
+## Paleta
 
-## Tokens visuais
+| Token | Hex | Uso |
+|---|---|---|
+| Café de tinta | `#281C19` | Texto principal, cabeçalho e fundos de alto contraste. |
+| Vinho trança | `#51262D` | Capa, seção de catálogo e blocos de contato. |
+| Marfim | `#F5EFE6` | Fundo predominante e texto em superfícies escuras. |
+| Cobre escuro | `#874431` | Links, botões sobre marfim, filetes e estados de foco. |
+| Dourado fosco | `#B58A52` | Detalhe curto em filete ou marcador; não usar em texto pequeno sobre marfim. |
+| Cacau neutro | `#685B55` | Texto auxiliar sobre marfim, com contraste AA. |
 
-| Token | Valor | Uso |
-| --- | --- | --- |
-| Café profundo | `#281C19` | Cabeçalho, texto de alto contraste, seções de serviço e rodapé. |
-| Café secundário | `#493832` | Texto auxiliar e superfícies escuras secundárias. |
-| Marfim quente | `#F6F1E9` | Fundo principal e superfícies claras. |
-| Areia | `#E8DED1` | Galeria e separação visual entre capítulos. |
-| Cobre queimado | `#9A5138` | Cor proprietária de ação e acento da marca. |
-| Cobre profundo | `#713824` | Texto/acento sobre superfícies claras, banda e CTA final. |
-| Dourado fosco | `#B58A52` | Ornamentação e detalhes pontuais, nunca texto corrido. |
-| Branco quente | `#FFFDF9` | Cards claros e texto sobre fundos escuros. |
+**Contraste:** texto corrido café/marfim e marfim/vinho atende WCAG AA; cobre escuro é o acento legível em fundo claro. Dourado é somente decorativo. Foco visível usa contorno de cobre escuro com deslocamento e espessura suficiente.
 
-O cobre queimado é a assinatura visual RBC. Marfim e café asseguram contraste; areia aquece a leitura; o dourado entra só como detalhe.
+## Tipografia
 
-## Tipografia e escala
+- **Cormorant Garamond 500/600:** H1, títulos editoriais, frase da Rebeca e rótulo RBC. Uso em caixa normal; itálico não é necessário para criar hierarquia.
+- **Manrope 400/500/600/700:** navegação, texto, tabela, metadados, botões e chips.
+- As duas famílias já estão instaladas via Fontsource. Não carregar fontes de terceiros.
+- H1 fluido (`clamp(3.25rem, 8.3vw, 8.5rem)`), H2 `clamp(2.7rem, 6vw, 5.6rem)`, H3 `1.35–1.8rem`, corpo `0.9–1rem`, legenda `0.72–0.82rem`.
+- Corpo e descrição com linha de até `68ch`; nenhum parágrafo longo sobre uma imagem.
 
-Cormorant Garamond (`500`, `600` e `500 italic`) compõe títulos e frases curtas. Manrope (`400`, `500`, `600`, `700`) organiza navegação, catálogo, respostas, CTA e conteúdo contínuo. As fontes são servidas localmente via Fontsource.
+## Espaçamento, cantos e sombra
 
-| Nível | Regra |
-| --- | --- |
-| H1 | Cormorant Garamond, escala fluida `clamp(4.5rem, 9.5vw, 9.25rem)`, entrelinha compacta e cobre em itálico pontual. |
-| H2 | Cormorant Garamond, entre aproximadamente `3.4rem` e `6.4rem`, alinhado ao início da seção. |
-| H3 | Cormorant Garamond em títulos de cards e módulos. |
-| Corpo | Manrope `0.88–0.95rem`, entrelinha `1.7–1.9`. |
-| Rótulo | Manrope `0.47–0.63rem`, caixa alta, peso `700`, tracking ampliado. |
+- Unidade-base `4px`; escala: `4, 8, 12, 16, 24, 32, 48, 64, 96, 128px`.
+- Seções: `clamp(4.5rem, 9vw, 8rem)` vertical; laterais `clamp(1.1rem, 5vw, 5rem)`.
+- Conteúdo limitado a `82rem`; grid de catálogo 4 colunas em telas largas, 2 em tablets e 1 no celular.
+- Cantos: 10px em controles, 18px em cards, arco de topo nas molduras fotográficas, 999px só em CTA/chip.
+- Sombra apenas no menu móvel e diálogo; fotografia não recebe sombra pesada.
 
-## Composição e componentes
+## Componentes
 
-A navegação permanece fixada no topo. O hero combina texto em grande escala com retrato vertical assimétrico; uma medalha RBC ocupa a área inferior livre da foto, sem cobrir o rosto. A apresentação pessoal alterna retrato e texto. O catálogo de serviços usa cinco famílias com estilos em chips, enquanto o portfólio oferece filtros (“Tudo”, “Tranças soltas”, “Nagô · Ghana”, “Texturas”), cartões com foto e ampliação em diálogo. O bloco de atendimento mostra cidade, valores e detalhes somente no nível confirmado; FAQ nativa e CTA encerram a jornada. Rodapé reúne os contatos e uma divulgação de privacidade em `<details>`.
+- **Cabeçalho:** wordmark RBC, navegação para Rebeca, estilos, galeria, valores e atendimento. Menu móvel operável pelo botão (`aria-expanded`, `aria-controls`, Escape e retorno de foco). O CTA de topo e o botão fixo têm rótulo específico para conversar sobre um estilo.
+- **Capa:** fundo vinho, frase curta à esquerda, localização, dois caminhos claros (ver estilos e iniciar conversa) e PNG transparente de modelo com tranças ancorado à direita/borda inferior. O texto não identifica a pessoa como Rebeca. A imagem mantém proporção, usa `contain` e recebe dimensões explícitas. Em celular a chamada precede a imagem; não há texto por cima do rosto.
+- **Sobre:** dois retratos reais (`rebeca-about.webp` e `rbc-cover-rebeca.webp`) em arcos lado a lado. As imagens mantêm proporção e não cortam o rosto; o nome e a frase real da bio acompanham a composição. A foto quadrada aparece no fechamento como sinal de conversa pessoal, sem recorte de rosto.
+- **Cards de estilos:** quatro grupos com os nomes fornecidos. Cada cartão tem título e chips; o link já nomeia o grupo enviado no WhatsApp. Não são notas, rankings ou recomendações.
+- **Tabela de valores:** uma linha por modelo, valor e duração como `[PREENCHER]`. Em telas pequenas a tabela se transforma em blocos legíveis, sem rolagem horizontal forçada. Adicionais são listados à parte, também com valor pendente.
+- **Galeria:** 13 fotos únicas do portfólio, trilho horizontal nativo com `scroll-snap`, gesto horizontal no celular e botões anterior/próxima para mouse/teclado. Cada cartão tem descrição e botão de ampliar. Não há avanço automático. Filtros descrevem a aparência (“tranças longas”/“desenhos junto à cabeça”), não atribuem técnica incerta. `dialog` amplia a imagem, oferece legenda e CTA contextual; setas do teclado navegam e o foco retorna ao cartão que abriu.
+- **Antes de agendar:** preparação, regulamento e formas de pagamento ficam em blocos separados. Campos não confirmados permanecem `[PREENCHER]`; nenhum termo da referência de unhas é reaproveitado como regra da Rebeca.
+- **Localização:** exibe Lucas do Rio Verde/MT; endereço e ponto exatos ficam pendentes, sem mapa fictício.
+- **FAQ:** `<details>/<summary>` nativo, uma resposta por linha, compatível com teclado; pergunta e resposta não repetem slogans.
+- **CTA:** mínimo de 48px, contraste alto, seta se desloca somente em hover/foco. Texto do link informa que a ação é falar com a Rebeca ou consultar o modelo.
+- **Rodapé/privacidade:** canais existentes, sem formulário ou rastreadores no código atual. Disclosure traz identificação e campos legais pendentes, sem afirmar conformidade concluída.
 
-O wordmark é textual (RBC/Tranças) com selo circular inspirado no ícone já existente; filetes e elipses entrelaçados funcionam como ornamentação. Eles não devem ser apresentados como um novo logotipo aprovado pela cliente.
+## Movimento
 
-## Interação e animação
+Todos os movimentos são opcionais e não escondem conteúdo. Transições usam `transform` e `opacity`, com curvas suaves e duração entre 0,45–0,9s.
 
-Menu móvel operável por botão e teclado, com `aria-expanded`; filtros com `aria-pressed`; galeria com botões nomeados, foco restaurado após fechar e navegação por `Esc`/setas; FAQ construída com `<details>`/`<summary>`. Foco visível em todas as ações e âncora “Pular para o conteúdo”.
+| Movimento | Onde / motivo | Regra |
+|---|---|---|
+| Entrada única coordenada | Primeira abertura: chamada, texto de apoio, CTA e recorte aparecem em sequência curta, apresentando a capa como uma composição só. | GSAP; `0.5–0.8s`, `power3.out`; só `opacity`/`transform`. Sem animação em cada seção. |
+| Deslocamento de imagem ao rolar | A foto da capa move poucos pixels enquanto a própria capa sai da tela, um parallax controlado inspirado nos vídeos. | GSAP ScrollTrigger com `scrub` leve e deslocamento máximo de 18px. Sem alterar tamanho ou layout. |
+| CTA direcional | Hover/foco aponta a seta para a próxima ação. | CSS `transform`, 180ms; sem atração magnética ou cursor customizado. |
+| Galeria | Arraste horizontal nativo, `scroll-snap` e diálogo apenas após clique. | Sem autoplay. Scroll suave em resposta aos controles; respeita `prefers-reduced-motion`. |
+| Rolagem | Lenis integra suavização com ScrollTrigger quando movimento reduzido não está ativo. | Teclado, âncoras e rolagem nativa continuam disponíveis. |
 
-GSAP/ScrollTrigger aplicam entradas breves de opacidade/deslocamento ao hero e às seções (420–700 ms), com `once: true`. Lenis suaviza o scroll somente quando o sistema não solicita movimento reduzido e está integrado ao ticker/ScrollTrigger. Hover de imagem é uma ampliação discreta e curta. Sem parallax pesado, sem marquee animado e sem texto escondido antes do JavaScript. Com `prefers-reduced-motion: reduce`, não se inicializam GSAP/Lenis e CSS remove a transição.
+Os vídeos sobre cursor contextual e parallax foram referências, não especificações para copiar. Cursor customizado e magnetismo foram removidos para preservar a acessibilidade e não competir com os trabalhos.
 
-## Conteúdo, acessibilidade e SEO
+### Movimento reduzido
 
-Copy e fotos são geradas em HTML estático por `scripts/render-page.mjs` a partir de `src/data/`, mantendo textos importantes no HTML inicial. ALT descreve o que aparece, sem atribuir nome de estilo incerto. Valores, duração, pagamento, endereço completo, regras, credenciais e avaliações não são inventados. Imagens vêm de arquivos relativos `public/images/`, com caminhos de armazenamento Manus como primários e fallback relativo para hospedagem estática.
+Com `prefers-reduced-motion: reduce`, GSAP/ScrollTrigger e Lenis não iniciam; scroll-snap fica sem suavização e transições de hover são reduzidas a zero. Conteúdo, navegação, galeria e diálogo permanecem utilizáveis.
 
-O HTML é `pt-BR`, com título, description, keywords, Open Graph/Twitter e JSON-LD `Organization`, sem telefone, preço, avaliações, endereço específico ou URL presumida. Canonical, `og:url`, `og:image` absoluto e sitemap dependem do domínio real; o `noindex` e `robots.txt` bloqueiam indexação nesta etapa. Não há analytics, pixel, formulário ou cookie de rastreamento; por isso não há banner de cookies.
+## Layout
 
-## Pendências de imagem/dados
+```text
+DESKTOP
+[ RBC / navegação / CTA                                      ]
+[ frase e localização             | PNG recortado na borda   ]
+[ retrato arqueado                 | apresentação em primeira pessoa ]
+[ famílias de estilos em 4 colunas                             ]
+[ trilho da galeria  → arrastar / filtrar / ampliar            ]
+[ valores por modelo  | adicionais                              ]
+[ preparação | regulamento | formas de pagamento               ]
+[ Lucas do Rio Verde/MT + endereço pendente                    ]
+[ FAQ                                      | contato RBC        ]
+[ Instagram / WhatsApp / privacidade                            ]
 
-As pastas separadas “header” e “Posts da cliente” não vieram no RAR; os dez WebP são recortes da captura longa do Instagram. A capa usa um dos retratos disponíveis e os cards usam o feed fornecido, com resolução menor e possível perda de enquadramento. Substituir pelas fotos originais em alta resolução, confirmar atribuição dos estilos e autorização de imagem de cada pessoa antes da publicação.
+CELULAR — primeira prioridade
+[ RBC                                            menu ]
+[ frase em 3 linhas + cidade                         ]
+[ CTA consultar / ver estilos                        ]
+[ recorte PNG no lado direito, encostado à borda     ]
+[ dois retratos em arcos + bio                     ]
+[ grupos de estilos em coluna                      ]
+[trilho horizontal para swipe, 1 cartão por gesto]
+[ valores e adicionais em blocos                   ]
+[ regras, pagamento e endereço empilhados           ]
+[ FAQ curta / CTA fixo com alvo ≥ 44px              ]
+```
 
-Confirmar o destino do WhatsApp: o briefing traz `+55 75 9871-2028` e `wa.me/5575987128028`, que divergem. O rascunho segue o endereço `wa.me` fornecido, sem exibir número formatado. Preços, adicionais, tempo, pagamentos, regulamento, endereço, atendimento na Bahia, identificação civil/CNPJ e domínio também precisam de confirmação.
+## Pendências antes de publicar
+
+- `[PREENCHER]` valores por modelo e adicionais.
+- `[PREENCHER]` duração de cada atendimento.
+- `[PREENCHER]` preparação, regulamento, sinal, atrasos e cancelamentos.
+- `[PREENCHER]` formas de pagamento aceitas.
+- `[PREENCHER]` endereço completo ou instruções de localização.
+- `[CONFIRMAR]` destino do WhatsApp: o material original contém número formatado e URL `wa.me` divergentes. A página não exibe o número e mantém o link já existente no projeto, aguardando validação.
+- `[CONFIRMAR]` classificação técnica de fotos do portfólio antes de nomear Box Braids, Knotless, Ghana, Nagô, Boho ou Gyps.
+- `[CONFIRMAR]` autorização de uso das fotos de cada pessoa no site.
+- `[PREENCHER]` identificação profissional, base legal e prazo de retenção na política de privacidade.
+- `[PREENCHER]` domínio/canonical e imagem social absoluta. A página fica `noindex` até a URL pública ser confirmada.
+
+## Decisões diferentes das referências
+
+- A capa usa o recorte de tranças fornecido na pasta `Menu Header`, encostado à borda como pedido; a identidade da pessoa não é afirmada. Os retratos identificados como Rebeca ficam em “Sobre” e “Contato”.
+- Não há texto inglês, linguagem de salão genérica, “prova social”, avaliações, preços ou durações importados.
+- A cor principal é vinho/café, com cobre legível e dourado somente ornamental; não se reproduz o preto/bordô clínico da referência brasileira.
+- A galeria usa o material real, sem autoplay ou parallax por foto. O gesto nativo e a ampliação atendem ao uso por Instagram no celular.
+- Arcos preservam fotos como moldura, sem colocar legenda ou letra pequena sobre o rosto/trança.
+- Foram removidos monogramas alheios, selos de cera, ornamentos repetidos, chips desnecessários e efeitos sem função.

@@ -2,9 +2,10 @@ import { galleryItems } from "../data/gallery.js";
 import { createWhatsAppUrl } from "../data/site.js";
 
 export function initializeGallery() {
-  const grid = document.querySelector("[data-gallery-grid]");
+  const track = document.querySelector("[data-gallery-grid]");
   const filters = [...document.querySelectorAll("[data-gallery-filter]")];
   const count = document.querySelector("[data-gallery-count]");
+  const scrollButtons = [...document.querySelectorAll("[data-gallery-scroll]")];
   const dialog = document.querySelector("[data-lightbox]");
   const image = document.querySelector("[data-lightbox-image]");
   const title = document.querySelector("[data-lightbox-title]");
@@ -14,7 +15,7 @@ export function initializeGallery() {
   const previous = document.querySelector("[data-lightbox-prev]");
   const next = document.querySelector("[data-lightbox-next]");
 
-  if (!grid || !dialog || !image || !title || !description) return;
+  if (!track || !dialog || !image || !title || !description) return;
 
   let activeCategory = "all";
   let activeIndex = 0;
@@ -28,8 +29,17 @@ export function initializeGallery() {
   }
 
   function updateCount() {
-    const visibleCount = grid.querySelectorAll(".work-card:not([hidden])").length;
-    if (count) count.textContent = `${visibleCount} ${visibleCount === 1 ? "referência" : "referências"}`;
+    const visibleCount = track.querySelectorAll(".work-card:not([hidden])").length;
+    if (count) count.textContent = `${visibleCount} ${visibleCount === 1 ? "trabalho" : "trabalhos"}`;
+  }
+
+  function updateScrollButtons() {
+    const canScrollBack = track.scrollLeft > 4;
+    const canScrollForward = track.scrollLeft + track.clientWidth < track.scrollWidth - 4;
+    scrollButtons.forEach((button) => {
+      const direction = Number(button.dataset.galleryScroll);
+      button.disabled = direction < 0 ? !canScrollBack : !canScrollForward;
+    });
   }
 
   function applyFilter(category) {
@@ -40,10 +50,12 @@ export function initializeGallery() {
       button.setAttribute("aria-pressed", String(selected));
     });
 
-    grid.querySelectorAll(".work-card").forEach((card) => {
+    track.querySelectorAll(".work-card").forEach((card) => {
       card.hidden = category !== "all" && card.dataset.category !== category;
     });
+    track.scrollTo({ left: 0, behavior: "auto" });
     updateCount();
+    requestAnimationFrame(updateScrollButtons);
   }
 
   function showItem(index) {
@@ -56,7 +68,7 @@ export function initializeGallery() {
     title.textContent = item.title;
     description.textContent = item.description;
     if (contact) {
-      contact.href = createWhatsAppUrl(`Olá, Rebeca! Gostaria de consultar sobre ${item.question}.`);
+      contact.href = createWhatsAppUrl(`Olá, Rebeca! Gostaria de conversar sobre ${item.question}.`);
     }
   }
 
@@ -72,7 +84,17 @@ export function initializeGallery() {
     button.addEventListener("click", () => applyFilter(button.dataset.galleryFilter ?? "all"));
   });
 
-  grid.addEventListener("click", (event) => {
+  scrollButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.galleryScroll);
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      track.scrollBy({ left: direction * track.clientWidth * 0.76, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  });
+  track.addEventListener("scroll", updateScrollButtons, { passive: true });
+  window.addEventListener("resize", updateScrollButtons, { passive: true });
+
+  track.addEventListener("click", (event) => {
     const trigger = event.target.closest("[data-gallery-open]");
     if (!trigger) return;
 

@@ -11,36 +11,41 @@ export const site = {
     url: "https://www.instagram.com/rebeca.amrr/",
   },
   email: "borgesrebeca502@gmail.com",
-  // Destino reproduzido do briefing. Diverge do telefone formatado e exige validação antes da publicação.
   whatsappTarget: "5575987128028",
   seo: {
-    title: "RBC Tranças | Trancista em Lucas do Rio Verde — MT",
+    title: "Rbc_tranças | Trancista em Lucas do Rio Verde — MT",
     description:
-      "Conheça o trabalho de Rebeca, explore tranças e penteados afro em Lucas do Rio Verde–MT e consulte valores, disponibilidade e detalhes pelo WhatsApp.",
+      "Rebeca é trancista em Lucas do Rio Verde, MT. Veja tranças afro e penteados, explore o portfólio e consulte detalhes pelo WhatsApp.",
     keywords: [
       "trancista em Lucas do Rio Verde",
       "tranças afro",
       "Box Braids",
       "Knotless",
       "Nagô",
-      "Ghana Braids",
+      "Ghana",
       "penteados afro",
     ],
   },
   bioPhrase: "Onde Deus me plantar, minhas mãos florescerão.",
-  instagramImage: {
-    src: "./images/rebecca-portrait.webp",
-    storage: "/manus-storage/rebecca-portrait_1eb210c7.webp",
-    alt: "Rebeca sorrindo, com cabelo cacheado castanho e segurando um pente.",
+  heroImage: {
+    src: "./images/header-braid-cutout.webp",
+    alt: "Pessoa vista de perfil, com tranças longas escuras e casaco claro; recorte sem fundo.",
   },
   aboutImage: {
-    src: "./images/rebecca-portrait-2.webp",
-    storage: "/manus-storage/rebecca-portrait-2_905152cc.webp",
-    alt: "Rebeca em retrato frontal, usando penteado afro e blusa estampada.",
+    src: "./images/rebeca-about.webp",
+    alt: "Retrato de Rebeca sorrindo de frente, segurando um pente junto ao cabelo cacheado.",
+  },
+  aboutImageSecondary: {
+    src: "./images/rbc-cover-rebeca.webp",
+    alt: "Recorte de Rebeca sorrindo de perfil, com cabelo cacheado volumoso e mechas douradas.",
+  },
+  contactImage: {
+    src: "./images/rebeca-contact.webp",
+    alt: "Retrato quadrado de Rebeca com cabelo cacheado e pente.",
   },
 };
 
-export function createWhatsAppUrl(message = "Olá, Rebeca! Gostaria de saber mais sobre os estilos e o atendimento.") {
+export function createWhatsAppUrl(message = "Olá, Rebeca! Vi o catálogo da RBC e quero conversar sobre um estilo.") {
   const url = new URL(`https://wa.me/${site.whatsappTarget}`);
   url.searchParams.set("text", message);
   return url.toString();

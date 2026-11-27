@@ -1,50 +1,43 @@
 export const serviceGroups = [
   {
-    title: "Tranças soltas",
+    title: "Tranças individuais",
     styles: ["Box Braids", "Knotless", "Gyps Braids", "Boho Braids"],
   },
   {
-    title: "Nagô e traçados",
+    title: "Traçados junto à cabeça",
     styles: ["Ghana", "Nagô", "Boxeadora"],
   },
   {
-    title: "Entrelace e crochê",
+    title: "Aplicações e texturas",
     styles: ["Entrelace", "Entrelace com Nagô", "Crochê Braids", "Twister"],
   },
   {
     title: "Penteados e comprimentos",
     styles: ["Chanel", "Rabo de Cavalo", "Penteados femininos e masculinos"],
   },
-  {
-    title: "Toques finais",
-    styles: ["Decorações", "Finalizações personalizadas"],
-  },
 ];
+
+export const additionalServices = ["Decorações", "Finalizações personalizadas"];
 
 export const faqItems = [
   {
-    question: "Quais estilos posso consultar?",
+    question: "Como consulto os valores e a duração?",
     answer:
-      "O catálogo reúne Box Braids, Knotless, Gyps e Boho Braids, Ghana e Nagô, Boxeadora, Entrelace, Crochê Braids, Twister, Chanel, Rabo de Cavalo, penteados femininos e masculinos, decorações e finalizações personalizadas.",
+      "Os valores e o tempo de cada modelo ainda não estão preenchidos neste catálogo. Envie o nome ou uma foto de referência para a Rebeca confirmar esses detalhes.",
   },
   {
-    question: "Como consulto valores e disponibilidade?",
+    question: "O que posso enviar na primeira mensagem?",
     answer:
-      "Os valores e horários não estão publicados neste catálogo. Consulte a Rebeca pelo WhatsApp antes de confirmar o atendimento.",
+      "Conte o estilo que chamou sua atenção ou envie uma foto de referência para a Rebeca entender o que você procura.",
   },
   {
     question: "Onde é o atendimento?",
     answer:
-      "O local informado é Lucas do Rio Verde, no Mato Grosso. O endereço exato deve ser combinado diretamente com a Rebeca.",
+      "A cidade informada é Lucas do Rio Verde, no Mato Grosso. O endereço completo e o ponto de encontro devem ser alinhados diretamente com a Rebeca.",
   },
   {
     question: "Quais formas de pagamento são aceitas?",
     answer:
-      "As formas de pagamento ainda não foram confirmadas para esta página. Pergunte à Rebeca antes de agendar.",
-  },
-  {
-    question: "Como escolho um estilo?",
-    answer:
-      "Explore os nomes e as fotos do portfólio, depois envie à Rebeca o estilo ou a referência que quer consultar.",
+      "As formas de pagamento ainda precisam ser confirmadas. Pergunte à Rebeca antes de combinar o atendimento.",
   },
 ];
