@@ -1,10 +1,10 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
+// gsap, ScrollTrigger e Lenis são carregados como scripts globais em assets/vendor/
+// para o site funcionar sem build (Live Server, GitHub Pages ou qualquer hospedagem estática).
+const { gsap, ScrollTrigger, Lenis } = window;
 
 export function initializeMotion() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) return;
+  if (prefersReducedMotion || !gsap || !ScrollTrigger || !Lenis) return;
 
   gsap.registerPlugin(ScrollTrigger);
 

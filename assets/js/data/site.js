@@ -28,19 +28,19 @@ export const site = {
   },
   bioPhrase: "Onde Deus me plantar, minhas mãos florescerão.",
   heroImage: {
-    src: "./images/header-braid-cutout.webp",
+    src: "./assets/images/header-braid-cutout.webp",
     alt: "Pessoa vista de perfil, com tranças longas escuras e casaco claro; recorte sem fundo.",
   },
   aboutImage: {
-    src: "./images/rebeca-about.webp",
+    src: "./assets/images/rebeca-about.webp",
     alt: "Retrato de Rebeca sorrindo de frente, segurando um pente junto ao cabelo cacheado.",
   },
   aboutImageSecondary: {
-    src: "./images/rbc-cover-rebeca.webp",
+    src: "./assets/images/rbc-cover-rebeca.webp",
     alt: "Recorte de Rebeca sorrindo de perfil, com cabelo cacheado volumoso e mechas douradas.",
   },
   contactImage: {
-    src: "./images/rebeca-contact.webp",
+    src: "./assets/images/rebeca-contact.webp",
     alt: "Retrato quadrado de Rebeca com cabelo cacheado e pente.",
   },
 };

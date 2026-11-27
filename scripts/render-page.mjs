@@ -1,12 +1,12 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { site, createWhatsAppUrl } from "../src/data/site.js";
-import { serviceGroups, additionalServices, faqItems } from "../src/data/services.js";
-import { galleryItems } from "../src/data/gallery.js";
+import { site, createWhatsAppUrl } from "../assets/js/data/site.js";
+import { serviceGroups, additionalServices, faqItems } from "../assets/js/data/services.js";
+import { galleryItems } from "../assets/js/data/gallery.js";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
-const templatePath = resolve(root, "src/templates/index.html");
+const templatePath = resolve(root, "templates/index.html");
 const outputPath = resolve(root, "index.html");
 
 function escapeHtml(value) {

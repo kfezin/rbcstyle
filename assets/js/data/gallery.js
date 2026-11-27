@@ -5,7 +5,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Tranças individuais vistas de perfil, com variação de tons no comprimento.",
     alt: "Pessoa de perfil com tranças longas escuras e algumas mechas castanhas.",
-    src: "./images/portfolio-01.webp",
+    src: "./assets/images/portfolio-01.webp",
     question: "as tranças longas em tons escuros da galeria",
   },
   {
@@ -14,7 +14,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Comprimento escuro fotografado por trás.",
     alt: "Tranças longas escuras caindo pelas costas, vistas por trás.",
-    src: "./images/portfolio-02.webp",
+    src: "./assets/images/portfolio-02.webp",
     question: "as tranças longas vistas por trás na galeria",
   },
   {
@@ -23,7 +23,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Tranças compridas sobre os ombros, em foto de perfil.",
     alt: "Pessoa vista de lado com tranças individuais compridas sobre o ombro.",
-    src: "./images/portfolio-03.webp",
+    src: "./assets/images/portfolio-03.webp",
     question: "as tranças individuais compridas da galeria",
   },
   {
@@ -32,7 +32,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Linhas trançadas junto à cabeça e comprimento em tom castanho.",
     alt: "Penteado visto de perfil, com linhas trançadas junto à cabeça e comprimento castanho.",
-    src: "./images/portfolio-04.webp",
+    src: "./assets/images/portfolio-04.webp",
     question: "o traçado com comprimento castanho da galeria",
   },
   {
@@ -41,7 +41,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Desenho de linhas e divisões visíveis na raiz.",
     alt: "Vista superior de tranças com divisões marcadas junto ao couro cabeludo.",
-    src: "./images/portfolio-05.webp",
+    src: "./assets/images/portfolio-05.webp",
     question: "as tranças com divisão central da galeria",
   },
   {
@@ -50,7 +50,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Linhas trançadas próximas à cabeça, fotografadas de perto.",
     alt: "Penteado fotografado de perto, com linhas trançadas curvas junto à cabeça.",
-    src: "./images/portfolio-06.webp",
+    src: "./assets/images/portfolio-06.webp",
     question: "o traçado em linhas curvas da galeria",
   },
   {
@@ -59,7 +59,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Penteado curto com linhas trançadas próximas à cabeça.",
     alt: "Vista superior de cabelo curto com linhas trançadas próximas à cabeça.",
-    src: "./images/portfolio-07.webp",
+    src: "./assets/images/portfolio-07.webp",
     question: "as tranças em cabelo curto da galeria",
   },
   {
@@ -68,7 +68,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Penteado fotografado de cima e de perfil.",
     alt: "Pessoa com cabelo curto e linhas trançadas, fotografada de cima e de perfil.",
-    src: "./images/portfolio-08.webp",
+    src: "./assets/images/portfolio-08.webp",
     question: "as linhas trançadas em cabelo curto da galeria",
   },
   {
@@ -77,7 +77,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Tranças escuras com pontas onduladas em tom castanho.",
     alt: "Tranças longas escuras com pontas onduladas castanhas, vistas por trás.",
-    src: "./images/portfolio-09.webp",
+    src: "./assets/images/portfolio-09.webp",
     question: "as tranças com pontas onduladas da galeria",
   },
   {
@@ -86,7 +86,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Tranças longas com mechas castanhas, vistas pelas costas.",
     alt: "Tranças longas escuras e castanhas caindo pelas costas.",
-    src: "./images/portfolio-10.webp",
+    src: "./assets/images/portfolio-10.webp",
     question: "as tranças com mechas castanhas da galeria",
   },
   {
@@ -95,7 +95,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Registro de comprimento e volume das tranças.",
     alt: "Tranças individuais longas fotografadas de perto, com o comprimento em destaque.",
-    src: "./images/portfolio-11.webp",
+    src: "./assets/images/portfolio-11.webp",
     question: "as tranças individuais e o volume da galeria",
   },
   {
@@ -104,7 +104,7 @@ export const galleryItems = [
     categoryLabel: "Tranças longas",
     description: "Tranças escuras que se encontram com pontas onduladas.",
     alt: "Tranças longas escuras com pontas onduladas castanhas, vistas de costas.",
-    src: "./images/portfolio-12.webp",
+    src: "./assets/images/portfolio-12.webp",
     question: "as tranças com ondas nas pontas da galeria",
   },
   {
@@ -113,7 +113,7 @@ export const galleryItems = [
     categoryLabel: "Desenho junto à cabeça",
     description: "Linhas trançadas em cabelo curto, vistas de cima.",
     alt: "Pessoa com cabelo curto e linhas trançadas rente à cabeça, vista de cima.",
-    src: "./images/portfolio-13.webp",
+    src: "./assets/images/portfolio-13.webp",
     question: "o trançado em cabelo curto da galeria",
   },
 ];
