@@ -1,0 +1,109 @@
+# PROMPT — Landing page catálogo | Rbc_tranças | Trancista
+
+## 0. Como você deve trabalhar
+1. Antes de escrever código, analise o projeto existente (index.html, src/main.js, src/style.css, package.json, vite.config.js) e preserve o que já funciona.
+2. Apresente um plano curto (estrutura de seções, arquivos, design system) e só então implemente, em etapas. Evite remendos sucessivos e reescritas desnecessárias.
+3. Ao final, rode `npm run build` e `npm run preview`, teste as alterações, procure regressões e considere cenários de falha. Não presuma que o código está correto.
+4. Entregue o código completo, pronto para copiar e colar, arquivo por arquivo, indicando o caminho de cada um.
+
+## 1. Ambiente e stack (regras do projeto)
+- Vite + JavaScript moderno (ES6+, ES Modules), HTML e CSS puros. Extensões `.js` ou `.jsx`.
+- NÃO usar TypeScript, tipos estáticos ou arquivos `.ts`/`.tsx`.
+- Animações: GSAP (com ScrollTrigger) e Lenis, já instalados. Em JS puro por padrão (se o projeto usar React/Next.js, apenas em `.jsx`).
+- Estrutura: `index.html` na raiz; código em `src/` (`main.js`, `style.css`), organizado em módulos.
+- Desenvolvimento no VS Code e publicação como site estático.
+- Performance: 60fps, animar apenas `transform` e `opacity`, `will-change` pontual, imagens otimizadas com `loading="lazy"` e dimensões definidas. **[ADICIONADO]**
+
+## 2. Cliente e marca
+- Marca: **Rbc_tranças | Trancista** (Rebeca, @rebeca.amrr).
+- Instagram: https://www.instagram.com/rebeca.amrr/
+- Bio: trancista especializada em tranças e penteados afro. Beleza | Cachos | Academia. "Onde Deus me plantar, minhas mãos florescerão." BA🔁MT.
+- Local de atendimento: Lucas do Rio Verde – MT (também BA).
+- E-mail: borgesrebeca502@gmail.com
+- Contato: botão com link direto para o WhatsApp **+55 75 9871-2028** (`https://wa.me/5575987128028`, com mensagem inicial pré-preenchida).
+- Texto do WhatsApp dela (base de conteúdo): "RBC TRANÇAS | Beleza, estilo e autoestima! Especialista em tranças e penteados, oferecendo variedade de estilos para realçar sua beleza. Atendimento com qualidade, dedicação e cuidado em cada detalhe."
+- Estilos que ela faz: Box Braids e Knotless; Gyps Braids e Boho Braids; Ghana Braids e Nagô; Tranças Boxeadora; Entrelace e Entrelace com Nagô; Crochê Braids e Twister; Chanel e Rabo de Cavalo; Penteados femininos e masculinos; Decorações e finalizações personalizadas.
+- Posicionamento desejado: sofisticado, com presença e profissionalismo, mas principalmente com **personalidade de verdade** e sensação de marca única, para gerar posicionamento e valor de mercado.
+
+## 3. Escopo e objetivo
+- Landing page (curta), em formato de **catálogo completo**, em português do Brasil, seguindo as regras brasileiras.
+- Respeitar a ideia inicial da cliente (catálogo no estilo do vídeo de TikTok, com as seções: sobre mim, tabela de valores, formatos/modelos, serviços adicionais, regulamento, formas de pagamento, localização), mas com a elegância de uma marca premium.
+- O visitante precisa entender, ler e absorver as informações e as imagens dos trabalhos dela, sem poluição visual.
+- Estrutura sugerida **[ADICIONADO]**: hero com CTA → sobre mim → estilos e galeria de trabalhos → valores → como funciona → regulamento → formas de pagamento → onde atendo → CTA final. Sem seções desnecessárias.
+- Contato: botão de WhatsApp sempre acessível (fixo/flutuante e nas seções-chave). Não há formulário.
+
+## 4. Design
+1. Seguir as referências como base: https://crownwell-braids.framer.website/ e https://browra.framer.website/ (e as imagens de branding e de landing enviadas), usando partes diferentes de cada uma, de forma que combinem.
+2. Usar as imagens da referência da cliente como base da estrutura, respeitando a ideia inicial dela, mas com a elegância que o projeto pede.
+3. Tipografia estilosa e elegante (par serifada de destaque + sem serifa limpa), com `font-display: swap`.
+4. Criatividade e personalidade nos efeitos. **Evitar efeitos genéricos e falas genéricas.**
+5. Efeitos premium, bonitos e delicados.
+6. Usar as imagens PNG dos trabalhos dela que estarão nas pastas/zip. Manter os PNG originais como fonte; pode gerar versões otimizadas (WebP) com fallback. **[ADICIONADO]**
+7. Evitar informação em excesso para o site não ficar poluído.
+8. Foco nas imagens: animações de galeria realmente bonitas e interessantes são bem-vindas.
+9. Animações de hover também são bem-vindas.
+10. Toda animação precisa ter sentido com a marca e a pessoa dela. **[ADICIONADO]**
+11. Respeitar `prefers-reduced-motion`: desligar ou simplificar as animações. **[ADICIONADO]**
+
+## 5. Design system (entregável)
+Criar `DESIGN.md` (e variáveis CSS correspondentes) explicando o design e os efeitos: paleta, tipografia, escala de espaçamento, raios, sombras, componentes (botões, cards de estilo, galeria, tabela de valores), cada efeito/animação (o que faz, por quê, duração, easing) e regras de uso. Tudo via CSS custom properties, para trocar cores e fontes em um só lugar.
+
+## 6. Copy
+1. Combinar o texto com o design, de modo que se encaixe no site de forma interessante.
+2. Respeitar a mensagem passada no Instagram da cliente.
+3. Ser convincente de que o trabalho dela vale a pena, **usando apenas fatos reais**: sem inventar números, anos de experiência, resultados ou depoimentos. Se faltar dado, deixar `[PREENCHER]`.
+- Evite os erros comuns de copy gerada por IA: textos genéricos, clichês de marketing, adjetivos vazios, frases artificiais, excesso de formalidade, repetições de palavras e ideias, promessas exageradas, argumentos sem comprovação e CTAs genéricos.
+- Não utilize estruturas previsíveis ou seções desnecessárias.
+- Priorize comunicação natural, humana, objetiva e persuasiva, com personalidade e coerência com a marca.
+- Seja específico ao apresentar benefícios e diferenciais.
+- Escreva para comunicar e converter, não para impressionar.
+- Cada seção deve ter função clara e acrescentar informação relevante.
+- Evite qualquer frase que poderia ser usada por qualquer concorrente.
+
+## 7. SEO e GEO
+- `lang="pt-BR"`, `<title>` e meta description específicos, canonical (URL em `[PREENCHER]`), Open Graph e Twitter Cards, favicon e manifest.
+- Um único `h1`, hierarquia de títulos correta, HTML semântico (`header`, `main`, `section`, `footer`).
+- Dados estruturados JSON-LD: `LocalBusiness` ou `HairSalon`, com nome, cidade (Lucas do Rio Verde – MT), `areaServed`, contato, `sameAs` (Instagram), `hasOfferCatalog` com os serviços. **Não incluir `AggregateRating` nem `Review` sem avaliações reais.**
+- Texto claro e factual sobre quem é, o que faz, onde atende e como agendar (para o Google e para IAs citarem), mais FAQ curta com perguntas reais.
+- `sitemap.xml`, `robots.txt` e, se fizer sentido, `llms.txt`. **[ADICIONADO]**
+- Palavras-chave naturais (trancista em Lucas do Rio Verde, box braids, knotless, etc.), sem keyword stuffing.
+- Imagens com nomes de arquivo descritivos, ALT e tamanhos definidos.
+
+## 8. Conformidade legal (Brasil)
+1. **Política de privacidade** em página ou seção própria, em linguagem clara.
+2. **Aviso de cookies**, somente se houver cookies ou rastreamento. Se não houver analytics nem rastreadores, não criar banner e explicar isso na política. Se houver, banner com consentimento real (aceitar/recusar) e scripts só carregam após o aceite.
+3. **Coleta apenas dos dados necessários.** Sem formulário: o contato é pelo link do WhatsApp. Avisar na política que o WhatsApp tem a própria política.
+4. **Conformidade com a LGPD**: finalidade, base legal, direitos do titular, contato do responsável.
+5. **Dados da empresa**: CNPJ (ou identificação do profissional se não houver CNPJ), nome, cidade e contato no rodapé. Não invente o CNPJ: usar `[PREENCHER]`.
+6. **Imagens com direitos respeitados**: usar só as fotos dos trabalhos dela e imagens com autorização; creditar quando necessário. Cuidar do consentimento de pessoas que aparecem nas fotos. **[ADICIONADO]**
+7. **Nenhuma avaliação falsa** e **nenhuma promessa enganosa** (sem "garantia de resultado", "a melhor da cidade", prazos ou durações que ela não confirmou).
+8. Preços, duração e regras só com dados confirmados pela cliente.
+
+## 9. Acessibilidade
+- Texto alternativo (ALT) descritivo em todas as imagens de conteúdo e `alt=""` nas decorativas.
+- Contraste adequado (WCAG AA no mínimo, 4,5:1 em textos), inclusive sobre fotos.
+- Navegação completa por teclado: ordem lógica de foco, `:focus-visible` bem visível, "pular para o conteúdo", galeria e menus operáveis por teclado.
+- ARIA só quando necessário; botões e links com nomes claros; alvos de toque com tamanho adequado.
+- Lenis e animações não podem atrapalhar teclado, leitores de tela ou o zoom. **[ADICIONADO]**
+
+## 10. Configurável e escalável
+- Todo o conteúdo editável em arquivos de dados (`src/data/site.js`, `src/data/servicos.js`, `src/data/galeria.js`): contato, textos, estilos, preços, regras, pagamento, links.
+- Para adicionar um estilo ou foto, basta editar o arquivo de dados, sem mexer na lógica.
+- Componentes e módulos pequenos e reutilizáveis (`src/modules/…`); CSS organizado por camadas (variáveis, base, componentes, seções).
+- Sem duplicação, funções gigantes ou código monolítico. Nomenclatura consistente.
+
+## 11. Publicação sem erros de caminho
+- `vite.config.js` com `base: './'`.
+- Nenhum caminho absoluto começando com `/` para assets, imagens, fontes, CSS ou JS. Usar caminhos relativos ou imports do Vite (`new URL('./img/x.png', import.meta.url)`).
+- O `npm run build` + `npm run preview` precisam funcionar, e o site tem que funcionar também em subpasta.
+- Pronto para hospedagem estática (Netlify, Vercel, GitHub Pages, hospedagem comum). Incluir instruções de deploy.
+- Links externos com `rel="noopener noreferrer"`.
+
+## 12. Segurança e boas práticas de código
+- Código limpo, organizado, indentado e legível, sem linhas excessivamente longas, funções gigantes, código monolítico, duplicações ou complexidade desnecessária. Padrões de nomenclatura, modularização e arquitetura.
+- Nunca expor credenciais. Sem inline scripts; incluir Content-Security-Policy e demais cabeçalhos de segurança (arquivo `_headers` ou meta, conforme o host). **[ADICIONADO]**
+- Proteção contra XSS (não usar `innerHTML` com dados externos). Como a página é estática e sem formulário, SQL Injection, CSRF, autenticação, banco de dados e validação no servidor não se aplicam agora. Se o projeto ganhar backend, siga: validar dados no servidor, consultas parametrizadas, autenticação e autorização, permissões, proteção de dados sensíveis, tratamento de erros sem expor informações internas, transações e integridade do banco.
+
+## 13. Entregáveis e checklist final
+- Código completo (index.html, src/main.js, src/style.css, módulos e dados), `DESIGN.md`, `sitemap.xml`, `robots.txt`, política de privacidade e arquivo de instruções.
+- Checklist confirmando: LGPD, cookies, ALT, contraste, teclado, `reduced-motion`, SEO/GEO, paths relativos, sem avaliações falsas ou promessas enganosas, build ok, performance e pendências `[PREENCHER]`.

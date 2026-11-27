@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="32" fill="#281c19"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#b58a52" stroke-width="1"/>
+  <path d="M15 24c7-7 13 7 20 0s13 7 18 0M15 32c7-7 13 7 20 0s13 7 18 0M15 40c7-7 13 7 20 0s13 7 18 0" fill="none" stroke="#d7a17e" stroke-linecap="round" stroke-width="2"/>
+  <text x="32" y="34" fill="#fffdf9" font-family="Georgia,serif" font-size="9" font-weight="700" text-anchor="middle">RBC</text>
+</svg>
