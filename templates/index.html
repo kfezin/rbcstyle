@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>{{TITLE}}</title>
     <script type="application/ld+json">{{JSON_LD}}</script>
+    <script>
+      // Vercel Web Analytics: /_vercel/insights only exists on Vercel deployments, so skip local and GitHub Pages hosts.
+      (function () {
+        var host = location.hostname;
+        if (location.protocol === "file:" || host === "localhost" || host === "127.0.0.1" || host.endsWith("github.io")) return;
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        var script = document.createElement("script");
+        script.defer = true;
+        script.src = "/_vercel/insights/script.js";
+        document.head.appendChild(script);
+      })();
+    </script>
   </head>
   <body>
 
